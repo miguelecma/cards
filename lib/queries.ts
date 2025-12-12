@@ -3,6 +3,17 @@
  */
 
 export const GET_DATA = `
-  Write your query here
+  query MyQuery {
+    classes(category: "Art & Illustration", limit: 6) {
+      coverImage
+      duration
+      id
+      title
+      totalStudents
+      teacher {
+        name
+      }
+    }
+  }
 `;
 
