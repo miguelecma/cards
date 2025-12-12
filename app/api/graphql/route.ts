@@ -1,4 +1,4 @@
-import { createYoga, createSchema } from 'graphql-yoga';
+import { createYoga, createSchema, YogaInitialContext } from 'graphql-yoga';
 import { sampleClasses } from '@/data/mockData';
 
 const typeDefs = `
@@ -68,7 +68,9 @@ const schema = createSchema({
   resolvers,
 });
 
-const { handleRequest } = createYoga({
+type Context = { params: Promise<{}>}
+
+const { handleRequest } = createYoga<Context| YogaInitialContext>({
   schema,
   graphqlEndpoint: '/api/graphql',
   fetchAPI: { Response },

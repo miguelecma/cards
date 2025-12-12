@@ -2,8 +2,7 @@ import ClassCard, { ClassCardList, ClassCardItem } from "@/components/ClassCard"
 import { executeQuery } from "@/lib/graphqlClient"
 import { GET_DATA } from "@/lib/queries";
 
-// types for the classes
-
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const { classes } = await executeQuery<ClassCardList>(GET_DATA);
