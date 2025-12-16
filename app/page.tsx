@@ -10,7 +10,7 @@ export default async function Home() {
     <div>
       <div className="p-4 flex gap-2 flex-col">
         <h1 className="font-black text-2xl">My top Classes</h1>
-        <ul className="grid grid-flow-col grid-rows-2 gap-2">
+        <ul className="grid grid-cols-3 gap-4">
           {classes?.map((classItem) => (
             <li key={classItem.id}>
               <ClassCard {...classItem} />
