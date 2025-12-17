@@ -1,7 +1,10 @@
 import { updateSession } from '@/lib/supabase/middleware'
-import { type NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
 
 export async function proxy(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith('/api/graphql')) {
+    return NextResponse.next({ request });
+  }
   return await updateSession(request)
 }
 
