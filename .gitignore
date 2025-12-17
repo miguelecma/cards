@@ -2,3 +2,5 @@ node_modules
 vendor
 .next
 .DS_Store
+.env
+
